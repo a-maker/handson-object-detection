@@ -5,7 +5,7 @@ import time
 import numpy as np
 
 app = Flask(__name__)
-camera = PiVideoStream(resolution=(400, 304), framerate=2).start()
+camera = PiVideoStream(resolution=(400, 304), framerate=5).start()
 time.sleep(2)
 
 net = cv2.dnn.readNetFromCaffe('/home/pi/models/MobileNetSSD_deploy.prototxt',
