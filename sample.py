@@ -35,8 +35,8 @@ def detect(frame):
             continue
         # クラスの取り出し。データセットより、15はperson
         idx = int(classes[i])
-        if idx != 15:
-            continue
+        #if idx != 15:
+        #    continue
 
         # 認識座標の取り出し
         (startX, startY, endX, endY) = box.astype('int')
