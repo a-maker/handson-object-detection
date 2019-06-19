@@ -31,7 +31,7 @@ def detect(frame):
     for i, box in enumerate(boxes):
         # 20%以上の精度のボックスを取り出し
         confidence = confidences[i]
-        if confidence < 0.2:
+        if confidence < 0.5:
             continue
         # クラスの取り出し。データセットより、15はperson
         idx = int(classes[i])
