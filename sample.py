@@ -43,7 +43,11 @@ def detect(frame):
         # 認識座標の描画
         cv2.rectangle(frame, (startX, startY), (endX, endY), (0, 255, 0), 2)
         # 認識結果の描画
-        label = '{}: {:.2f}%'.format('Person', confidence * 100)
+        label = '{}: {:.2f}%'.format('***', confidence * 100)
+        if idx == 15:
+            label = '{}: {:.2f}%'.format('Person', confidence * 100)
+        if idx == 8:
+            label = '{}: {:.2f}%'.format('Cat', confidence * 100)
         y = startY - 15 if startY - 15 > 15 else startY + 15
         cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
             
