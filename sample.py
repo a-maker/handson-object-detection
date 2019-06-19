@@ -53,7 +53,8 @@ def detect(frame):
 def gen(camera):
     while True:
         frame = camera.read()
-        ret, jpeg = cv2.imencode('.jpg', frame)
+        processed_frame = detect(frame.copy())
+        ret, jpeg = cv2.imencode('.jpg', processed_frame)
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')
 
